@@ -1,0 +1,341 @@
+/* import Oswald and Monserrat font from https://fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap");
+
+/* reset all default spacing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* project variables */
+:root {
+  --primary-color: #a59678;
+  --secondary-color: #3b4050;
+  --gray-color: #6f737f;
+  --white-color: #ffffff;
+  --dark-color: #2e323f;
+}
+
+/* global styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h3,
+h4 {
+  color: var(--primary-color);
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+.col {
+  margin-bottom: 0.8em;
+}
+
+p {
+  margin: 0.6em 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+img {
+  max-width: 100%;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+section,
+footer,
+aside {
+  padding: 3em 0;
+}
+
+.btn {
+  font-family: "Oswald", sans-serif;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.btn-small {
+  padding: 0.3em 1em;
+}
+
+.btn-large {
+  margin-top: 0.8em;
+  padding: 0.2em 1.7em;
+  font-size: 1rem;
+}
+
+.btn:focus,
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* Styles for header */
+header {
+  background: var(--dark-color);
+  padding: 1em 0;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Styles for nav bar */
+.nav-toggle {
+  cursor: pointer;
+  height: 3em;
+  width: 3em;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--white-color);
+  position: absolute;
+  transition: opacity 250ms ease;
+  left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: 0.75;
+}
+
+.hamburger {
+  width: 50%;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: var(--white-color);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+/* toggle the visiblity of the nav links */
+.nav {
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+  font-size: 1rem;
+}
+.logo {
+  height: 30px;
+}
+
+.nav-visible {
+  visibility: visible;
+  height: auto;
+  padding: 1em 0;
+  position: relative;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-item {
+  margin-bottom: 0.3em;
+}
+
+.nav-list--primary {
+  margin-bottom: 1.2em;
+}
+
+.nav-link {
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* showcase section */
+.showcase {
+  background: var(--secondary-color);
+  min-height: 600px;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.showcase-inner {
+  padding: 3em 0;
+}
+
+/* second section */
+
+.showcase-title {
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+.showcase-title-span {
+  color: var(--primary-color);
+}
+
+.showcase-content {
+  font-size: 1.3rem;
+}
+
+/* section two */
+.section-two {
+  background: #eee;
+  text-align: center;
+}
+.section-two h3 {
+  font-size: 1.7em;
+}
+
+/* section three */
+.section-three-header {
+  font-size: 2rem;
+}
+
+aside div {
+  background: var(--secondary-color);
+  text-align: center;
+  color: var(--white-color);
+  padding: 2em;
+  margin-bottom: 0.75em;
+}
+
+aside h3 {
+  color: var(--white-color);
+  font-size: 1.6rem;
+}
+
+/* footer */
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.footer h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 0.7em;
+  font-size: clamp(1rem, 1vw + 1rem, 2.2rem);
+}
+
+.footer p,
+.footer .footer-link {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+/* styles fro medium devices */
+@media (min-width: 700px) {
+  aside {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  aside div {
+    width: 30%;
+  }
+}
+
+/* styles for large devices */
+@media (min-width: 1000px) {
+  .row,
+  nav,
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .col + .col {
+    margin-left: 20px;
+  }
+
+  .btn-large {
+    padding: 0.5em 1.7em;
+    font-size: 1.3rem;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .showcase {
+    text-align: left;
+  }
+  .showcase-title {
+    width: 47%;
+    padding-right: 2em;
+    line-height: 1.2;
+  }
+
+  .showcase-content {
+    width: 50%;
+    padding-top: 3em;
+    align-self: center;
+  }
+
+  .nav {
+    visibility: visible;
+    display: flex;
+    height: auto;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav-list--primary {
+    margin: 0 2em 0 0;
+  }
+
+  .nav-item {
+    margin: 0 0 0 2em;
+  }
+  .section-three-main {
+    padding: 3em 5em 3em 0;
+  }
+  aside {
+    display: block;
+  }
+  aside div {
+    width: 100%;
+  }
+
+  .company {
+    flex-basis: 400px;
+  }
+}
